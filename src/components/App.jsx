@@ -1,7 +1,7 @@
 // App.jsx
 
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { resetContacts } from '../redux/contactsSlice';
@@ -12,13 +12,11 @@ import { Filter } from './Filter/Filter';
 import { ResetButton } from './ResetButton/ResetButton';
 
 // Dodaj import funkcji getContacts z pliku selectors.js
-import { getContacts } from '../redux/selectors';
 
 export const App = () => {
   const [changesMade, setChangesMade] = useState(false);
 
   // Dodaj useSelector do pobierania kontaktów
-  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleReset = () => {
